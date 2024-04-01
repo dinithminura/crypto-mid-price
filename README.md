@@ -49,7 +49,7 @@ To get started with this project, follow these steps:
    
    run docker container using the following command:
    ```bash
-   docker run -p 3000:3000 --env-file=.env my-node-app
+   docker run -p 3000:3000 --env-file=.env crypto-mid-price-image
 
 3. **Verify the app is running:**
    
