@@ -36,3 +36,8 @@ To get started with this project, follow these steps:
    You can run the tests using:
    ```bash
    npm run test
+
+## API Endpoints
+
+- `GET /api/global-price-index`: Returns the global price index of the BTC/USDT trading pair.
+
