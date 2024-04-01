@@ -1,0 +1,39 @@
+# Dependency directories
+/node_modules
+
+# Environment variables file
+.env
+
+# Editor directories
+.vscode
+.idea
+*.iml
+
+# Log files
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files
+.vs
+
+# Build directories
+/build
+
+# Ignore coverage reports
+/coverage
+
+# Ignore test results
+/test-results
+
+# Ignore any personal configuration specific to your machine
+/config.json
+
+# Ignore npm-debug.log
+npm-debug.log*
+
+# Ignore package-lock.json
+package-lock.json
+
