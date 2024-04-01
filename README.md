@@ -37,7 +37,27 @@ To get started with this project, follow these steps:
    ```bash
    npm run test
 
+## Running the App with Docker
+
+1. **Build docker image:**
+
+   Execute the following command in your terminal:
+   ```bash
+   docker build -f infrastructure/docker/Dockerfile -t crypto-mid-price-image .
+
+2. **Run docker container:**
+   
+   run docker container using the following command:
+   ```bash
+   docker run -p 3000:3000 --env-file=.env my-node-app
+
+3. **Verify the app is running:**
+   
+   Open a web browser and navigate to `http://localhost:3000`. You should see "Server is running!" indicating that your app is running successfully.
+
+
 ## API Endpoints
 
 - `GET /api/global-price-index`: Returns the global price index of the BTC/USDT trading pair.
+- `GET /api/health-check`: Returns the OK with 200 status.
 
