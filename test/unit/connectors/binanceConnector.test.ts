@@ -16,7 +16,6 @@ describe('fetchBinanceOrderBook', () => {
     require('axios').get.mockResolvedValue(mockedResponse);
 
     // Call the function
-    console.log('BINANCE URL:', process.env.BINANCE_API_URL); // Log the value of the environment variable
     const orderBookData = await fetchBinanceOrderBook();
 
     // Verify that axios.get was called with the correct URL and parameters

@@ -1,6 +1,7 @@
 import WebSocket from 'ws';
 import { EventEmitter } from 'events';
 import { OrderBookData } from '../global/types';
+import logger from '../logger';
 
 const webSocketAddress = process.env.KRAKEN_WEB_SOCKET_ADDRESS;
 const symbol = process.env.KRAKEN_SYMBOL || 'XBT/USDT';
@@ -63,7 +64,7 @@ export const connectToKrakenWebSocket = (): Promise<void> => {
         });
 
         ws.on('error', (error) => {
-            console.error('WebSocket error:', error);
+            logger.error('WebSocket error:', error);
             reject(error);
         });
     });

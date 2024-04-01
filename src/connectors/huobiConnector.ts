@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { OrderBookData } from '../global/types';
+import logger from '../logger';
 
 const baseUrl = process.env.HUOBI_API_URL;
 const type = process.env.HUOBI_TYPE || 'step0';
@@ -14,7 +15,7 @@ export const fetchHuobiOrderBook = async (): Promise<OrderBookData> => {
         });
         return response.data && response.data.tick;
     } catch (error) {
-        // console.error('Error fetching Huobi order book:', error);
+        logger.error('Error fetching Huobi order book:', error);
         throw new Error('Failed to fetch Huobi order book');
     }
 };

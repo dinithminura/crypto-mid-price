@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { OrderBookData } from '../global/types';
+import logger from '../logger';
 
 const baseUrl = process.env.BINANCE_API_URL;
 const limit = process.env.BINANCE_LIMIT || 10;
@@ -13,7 +14,7 @@ export const fetchBinanceOrderBook = async (): Promise<OrderBookData> => {
         });
         return response.data;
     } catch (error) {
-        // console.error('Error fetching Binance order book:', error);
+        logger.error('Error fetching Binance order book:', error);
         throw new Error('Failed to fetch Binance order book');
     }
 };

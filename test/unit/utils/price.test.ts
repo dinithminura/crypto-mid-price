@@ -10,6 +10,14 @@ describe('calculateMidPrice function', () => {
 
         expect(midPrice).toBe((100 + 101) / 2);
     });
+    test('throws error when bids data is missing or invalid', () => {
+        const bids: [string, string][] = [];
+        expect(() => calculateMidPrice(bids, [['100', '1']])).toThrow('Invalid or missing bid data');
+    });
+    test('throws error when asks data is missing or invalid', () => {
+        const asks: [string, string][] = [];
+        expect(() => calculateMidPrice([['100', '1']], asks)).toThrowError('Invalid or missing ask data');
+    });
 });
 
 describe('calculateAverageMidPrice function', () => {
@@ -22,6 +30,9 @@ describe('calculateAverageMidPrice function', () => {
         const averageMidPrice = calculateAverageMidPrice(orderBooks);
 
         expect(averageMidPrice).toBe(((100 + 101) / 2 + (99 + 102) / 2) / 2);
-    });    
-
+    });
+    test('throws error when orderBooks array is empty', () => {
+        const orderBooks: OrderBookData[] = [];
+        expect(() => calculateAverageMidPrice(orderBooks)).toThrow('No order book data provided');
+    });
 });
