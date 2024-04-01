@@ -31,7 +31,7 @@ To get started with this project, follow these steps:
    ```bash
    npm run dev
 
-5. **Testing:**
+5. **Test suite:**
    
    You can run the tests using:
    ```bash
@@ -45,13 +45,17 @@ To get started with this project, follow these steps:
    ```bash
    docker build -f infrastructure/docker/Dockerfile -t crypto-mid-price-image .
 
-2. **Run docker container:**
+2. **Create .env file:**
+   
+   Create a `.env` file by following .env.example. Since all the connector apis are public, same values added in example file.   
+
+3. **Run docker container:**
    
    run docker container using the following command:
    ```bash
    docker run -p 3000:3000 --env-file=.env crypto-mid-price-image
 
-3. **Verify the app is running:**
+4. **Verify the app is running:**
    
    Open a web browser and navigate to `http://localhost:3000`. You should see "Server is running!" indicating that your app is running successfully.
 
@@ -59,5 +63,5 @@ To get started with this project, follow these steps:
 ## API Endpoints
 
 - `GET /api/global-price-index`: Returns the global price index of the BTC/USDT trading pair.
-- `GET /api/health-check`: Returns the OK with 200 status.
+- `GET /api/health-check`: Returns OK with 200, and can be used as the endpoint to check the server health (for deployments).
 
