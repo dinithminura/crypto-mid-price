@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { getGlobalAverageMidPrice } from '../services/globalPriceService';
+import logger from '../logger';
 
 export const getGlobalPriceIndex = async (req: Request, res: Response) => {
     try {
@@ -11,7 +12,7 @@ export const getGlobalPriceIndex = async (req: Request, res: Response) => {
             }
         });
     } catch (error) {
-        console.error('Error fetching global price index:', error);
+        logger.error('Error fetching global price index:', error);
         res.status(500).json({ error: 'Internal server error' });
     }
 };
